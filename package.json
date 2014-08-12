@@ -1,0 +1,30 @@
+{
+  "name": "exec-php",
+  "version": "0.0.0",
+  "description": "Execute PHP function within NodeJS application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iqbalfn/exec-php.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "php"
+  ],
+  "author": "Iqbal Fauzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iqbalfn/exec-php/issues"
+  },
+  "homepage": "https://github.com/iqbalfn/exec-php",
+  "dependencies": {
+    "tmp": "0.0.24"
+  },
+  "devDependencies": {
+    "should": "^4.0.4"
+  }
+}
