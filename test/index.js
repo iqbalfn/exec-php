@@ -61,4 +61,13 @@ describe('Module', function(){
             }, 1500);
         });
     });
+    
+    it('really should execute php function and return right result', function(done){
+        execPhp('./php/6.php', function(error, php, outprint){
+            php.my_function(1, 2, function(err, result, output, printed){
+                result.should.equal(3);
+                done();
+            });
+        });
+    });
 });
