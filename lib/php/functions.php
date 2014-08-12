@@ -38,5 +38,11 @@ function _exec_php_call_user_function($file, $function, $arguments){
  */
 function _exec_php_get_user_functions(){
     $funcs = get_defined_functions();
-    return $funcs['user'];
+    $result = array();
+    $expfn = array('_exec_php_get_user_functions', '_exec_php_call_user_function');
+    foreach($funcs['user'] as $func){
+        if(!in_array($func, $expfn))
+            $result[] = $func;
+    }
+    return $result;
 }
