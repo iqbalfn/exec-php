@@ -24,14 +24,13 @@ Usage
 exec-php arguments
 ------------------
 
-1. `String` path to user php file.
-2. `String` path to machine php bin file.
-3. `Function` callback function after creating `exec-php` object. This function 
-    will get called with below arguments :
+1. `String`. Path to user php file.
+2. `String`. Path to machine php bin file.
+3. `Function`. Callback function after creating `exec-php` object. This function will get called with below arguments :
 
-    a. `Mixed` error message.  
-    b. `Object` exec-php object that contain all user php defined function.  
-    c. `String` printed string when requiring user php file.  
+    a. `Mixed`. Error message.  
+    b. `Object`. Exec-php object that contain all user php defined function.  
+    c. `String`. Printed string when requiring user php file.  
     
 exec-php object
 ---------------
@@ -40,10 +39,10 @@ All user function defined on user php file will be appended to exec-php object.
 Call it normally with the last argument is callback function. The callback 
 function called with below arguments :
 
-1. `Mixed` error message.
-2. `Mixed` returned value of user php function.
-3. `String` printed string of php file when requiring it.
-4. `String `printed string of php function when calling it.
+1. `Mixed`. Error message.
+2. `Mixed`. Returned value of user php function.
+3. `String`. Printed string of php file when requiring it.
+4. `String`. Printed string of php function when calling it.
 
 Example
 -------
@@ -52,10 +51,8 @@ Example
     <?php
         
         echo "One";
-        
         function my_function($arg1, $arg2){
             echo "Two";
-            
             return $arg1 + $arg2;
         }
     
