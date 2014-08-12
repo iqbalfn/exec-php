@@ -70,4 +70,19 @@ describe('Module', function(){
             });
         });
     });
+    
+    it('really shouldn\'t has private exec-php function', function(done){
+        execPhp('./php/6.php', function(error, php, outprint){
+            php.should.not.have.property('_exec_php_call_user_function');
+            done();
+            
+        });
+    });
+    
+    it('should ok for user php file to require otherfile from it self location', function(done){
+        execPhp('./php/7.php', function(error, php, outprint){
+            php.should.have.property('other_file_function');
+            done();
+        });
+    });
 });
