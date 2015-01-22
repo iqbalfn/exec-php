@@ -30,9 +30,9 @@ exec-php arguments
 
 The `Function` arguments called with this arguments:
 
-a. `Mixed`. Error message.
-b. `Object`. Exec-php object that contain all user php defined function.
-c. `String`. Printed string when requiring user php file.
+1. `Mixed`. Error message.
+2. `Object`. Exec-php object that contain all user php defined function.
+3. `String`. Printed string when requiring user php file.
     
 exec-php object
 ---------------
