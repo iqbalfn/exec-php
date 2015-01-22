@@ -28,9 +28,11 @@ exec-php arguments
 2. `String`. Path to machine php bin file.
 3. `Function`. Callback function after creating `exec-php` object. This function will get called with below arguments :
 
-    a. `Mixed`. Error message.  
-    b. `Object`. Exec-php object that contain all user php defined function.  
-    c. `String`. Printed string when requiring user php file.  
+The `Function` arguments called with this arguments:
+
+a. `Mixed`. Error message.
+b. `Object`. Exec-php object that contain all user php defined function.
+c. `String`. Printed string when requiring user php file.
     
 exec-php object
 ---------------
@@ -85,5 +87,7 @@ All uppercase function name on PHP will be converted to lowercase on `exec-php`.
     var execPhp = require('exec-php');
     
     execPhp('file.php', function(error, php, outprint){
-        php
+        php.myfunction(1, 2, function(error, result){
+            // result is now 3
+        });
     });
