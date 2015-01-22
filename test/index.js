@@ -85,4 +85,13 @@ describe('Module', function(){
             done();
         });
     });
+    
+    it('should ok to call camelCase function on PHP file with lowered case of function name', function(done){
+        execPhp('./php/8.php', function(error, php, outprint){
+            php.myfunction(1, 2, function(err, result, output, printed){
+                result.should.equal(3);
+                done();
+            });
+        });
+    });
 });

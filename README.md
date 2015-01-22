@@ -70,3 +70,20 @@ Example
             // printed is now `Two'.
         });
     });
+
+Note
+----
+
+All uppercase function name on PHP will be converted to lowercase on `exec-php`.
+
+    // file.php
+    <?php
+    
+        function MyFunction($a, $b){ return $a + $b; }
+    
+    // app.js 
+    var execPhp = require('exec-php');
+    
+    execPhp('file.php', function(error, php, outprint){
+        php
+    });

@@ -1,6 +1,6 @@
 {
   "name": "exec-php",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Execute PHP function within NodeJS application",
   "main": "index.js",
   "scripts": {
