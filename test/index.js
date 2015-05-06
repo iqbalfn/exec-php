@@ -94,4 +94,11 @@ describe('Module', function(){
             });
         });
     });
+    
+    it('should fill the `error` parameters with throwed error by PHP', function(done){
+        execPhp('./php/9.php', function(error, php, outprint){
+            error.toString().should.match(/PHP Fatal error/);
+            done();
+        });
+    });
 });

@@ -43,6 +43,9 @@ module.exports = function(file, bin, callback){
     
     cache = {};
     cli.execute(file, bin, '_exec_php_get_user_functions', [function(error, result, output, printed){
+        if(error)
+            return callback(error);
+        
         for(var i=0; i<result.length; i++){
             var func = result[i];
             cache[func] = (function(file, bin, func){

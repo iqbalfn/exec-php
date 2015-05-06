@@ -91,3 +91,9 @@ All uppercase function name on PHP will be converted to lowercase on `exec-php`.
             // result is now 3
         });
     });
+
+ChangeLog
+---------
+
+1. 0.0.3  
+   Handle PHP throw error exception.
