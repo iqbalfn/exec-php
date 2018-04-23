@@ -33,32 +33,34 @@ module.exports = function(file, bin, callback){
     
     file = path.resolve(path.dirname(module.parent.id), file);
     
-    if(!fs.existsSync(file))
-        throw new Error('File `' + file + '` not found.');
+    fs.access(file, fs.constants.F_OK, function (err) {
+        if (err)
+            throw new Error('File `' + file + '` not found.');
     
-    // use cache if it's exists.
-    var cache = require.cache[file];
-    if(cache)
-        return callback(false, cache, cache.__output);
-    
-    cache = {};
-    cli.execute(file, bin, '_exec_php_get_user_functions', [function(error, result, output, printed){
-        if(error)
-            return callback(error);
+        // use cache if it's exists.
+        var cache = require.cache[file];
+        if(cache)
+            return callback(false, cache, cache.__output);
         
-        for(var i=0; i<result.length; i++){
-            var func = result[i];
-            cache[func] = (function(file, bin, func){
-                return function(){
-                    var args = Array.prototype.slice.call(arguments, 0);
-                    cli.execute(file, bin, func, args);
-                };
-            })(file, bin, func);
-        }
-        
-        cache.__output = output;
-        require.cache[file] = cache;
-        
-        callback(false, cache, output);
-    }]);
+        cache = {};
+        cli.execute(file, bin, '_exec_php_get_user_functions', [function(error, result, output, printed){
+            if(error)
+                return callback(error);
+            
+            for(var i=0; i<result.length; i++){
+                var func = result[i];
+                cache[func] = (function(file, bin, func){
+                    return function(){
+                        var args = Array.prototype.slice.call(arguments, 0);
+                        cli.execute(file, bin, func, args);
+                    };
+                })(file, bin, func);
+            }
+            
+            cache.__output = output;
+            require.cache[file] = cache;
+            
+            callback(false, cache, output);
+        }]);
+    });
 };
