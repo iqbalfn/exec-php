@@ -7,7 +7,7 @@ describe('Module', function(done){
     it('should return error if user php file not found', function(done){
         file = path.resolve(__dirname, 'non-exists-file.php');
         execPhp(file, function(error, result, output) {
-            err.message.should.equal('File `' + file + '` not found.');
+            error.message.should.equal('File `' + file + '` not found.');
             done();
         });
     });
