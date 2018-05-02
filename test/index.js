@@ -1,13 +1,15 @@
 require('should');
+path = require('path');
 
 var execPhp = require('..');
 
-describe('Module', function(){
-    it('should throw error if user php file not found', function(done){
-        (function(){
-            execPhp('non-exists-file.php');
-        }).should.throw();
-        done();
+describe('Module', function(done){
+    it('should return error if user php file not found', function(done){
+        file = path.resolve(__dirname, 'non-exists-file.php');
+        execPhp(file, function(error, result, output) {
+            error.message.should.equal('File `' + file + '` not found.');
+            done();
+        });
     });
     
     it('should require the right relative file', function(done){
