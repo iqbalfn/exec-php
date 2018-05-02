@@ -33,7 +33,7 @@ The `Function` arguments called with this arguments:
 1. `Mixed`. Error message.
 2. `Object`. Exec-php object that contain all user php defined function.
 3. `String`. Printed string when requiring user php file.
-    
+
 exec-php object
 ---------------
 
@@ -95,5 +95,8 @@ All uppercase function name on PHP will be converted to lowercase on `exec-php`.
 ChangeLog
 ---------
 
-1. 0.0.3  
-   Handle PHP throw error exception.
+1. 0.0.3
+    1. Handle PHP throw error exception.
+1. 0.0.4
+    1. Upgrade tmp module to suppress opsolete functions ( [GuilhermeReda](https://github.com/GuilhermeReda) ).
+    1. Add `noop` function to support the new node callback standard.
