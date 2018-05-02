@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/iqbalfn/exec-php",
   "dependencies": {
-    "tmp": "0.0.24"
+    "tmp": "0.0.33"
   },
   "devDependencies": {
     "should": "^4.0.4"
