@@ -100,3 +100,5 @@ ChangeLog
 1. 0.0.4
     1. Upgrade tmp module to suppress opsolete functions ( [GuilhermeReda](https://github.com/GuilhermeReda) ).
     1. Add `noop` function to support the new node callback standard.
+1. 0.0.5
+    1. Close temp file pointer on removing the file( [MHDMAM](https://github.com/MHDMAM) ).

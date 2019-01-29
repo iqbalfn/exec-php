@@ -1,6 +1,6 @@
 {
   "name": "exec-php",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Execute PHP function within NodeJS application",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/iqbalfn/exec-php",
   "dependencies": {
+    "mocha": "^5.2.0",
     "tmp": "0.0.33"
   },
   "devDependencies": {
