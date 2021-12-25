@@ -2,7 +2,7 @@
 /**
  * Collection of cli functions.
  * @package exec-cli
- * @version 1.0
+ * @version 0.0.6
  */
 
 /**
@@ -29,20 +29,5 @@ function _exec_php_call_user_function($file, $function, $arguments){
     $result['printed'] = ob_get_contents();
     ob_end_clean();
     
-    return $result;
-}
-
-/**
- * Get list of user functions.
- * @return user defined function.
- */
-function _exec_php_get_user_functions(){
-    $funcs = get_defined_functions();
-    $result = array();
-    $expfn = array('_exec_php_get_user_functions', '_exec_php_call_user_function');
-    foreach($funcs['user'] as $func){
-        if(!in_array($func, $expfn))
-            $result[] = $func;
-    }
     return $result;
 }
